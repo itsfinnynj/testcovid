@@ -1,0 +1,411 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" type="favicon.ico />
+    <link rel=" stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3904f9e5d3.js" crossorigin="anonymous"></script>
+    <title>COVID-19 Screening</title>
+</head>
+
+<body>
+
+    <!--Top section-->
+    <div class="intro py-3 bg-white text-center">
+        <div class="container">
+            <h2 class="text-danger display-3 my-4">COVID-19 Screening Tool</h2>
+            <p>You'll answer a few questions about symptoms, travel, and contact you've had with others.</p>
+        </div>
+    </div>
+
+
+    <!--Alert box-->
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <div id="myAlert" class="alert alert-success text-center show d-none" role="alert">
+                    <strong>Info!</strong> Please fill the form, to get valid result.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--toast-->
+
+
+
+
+    <!--Result section-->
+    <div class="result py-4 d-none bg-light text-center">
+        <div class="container lead">
+            <p>We have got &nbsp;<span class="text-danger Single display-4">0</span><span
+                    class="text-danger display-4">%</span>&nbsp; COVID-19 symptoms in you.</p>
+
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <P class="bg-warning p-1"><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;If it shows
+                            more
+                            than 62%, you are at high risk.</P>
+                    </div>
+                </div>
+            </div>
+
+            <p>Isolate yourself and your immediate family members. You are advised for testing as your
+                infection risk is high. Please call the toll-free helpline number to schedule your test.
+
+                <p>Helpline Number -
+                    <span class="text-danger">011-23978046 or 1075</span>
+                </p>
+
+                <p>Useful Links:</p>
+
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <div class="list-group list-group-flush" id="myList" role="tablist">
+                                <a class="list-group-item list-group-item-action" data-toggle="list"
+                                    href="https://icmr.nic.in/node/39071" role="tab">List of test centers</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list"
+                                    href="https://www.mohfw.gov.in" role="tab">More
+                                    info for COVID-19</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#"
+                                    role="tab">Emaid Id: ncov2019@gov.in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </P>
+
+        </div>
+    </div>
+
+
+    <!--Quiz Section-->
+    <div class="quiz py-3 bg-danger">
+        <div class="container">
+            <p class="lead my-5 text-white text-center">This tool can help you understand what to do next about
+                COVID-19. Let’s all look out for each other by knowing our status, trying not to infect others, and
+                reserving care for those in need.</p>
+
+            <form class="covid-form text-light" name="covid_form" onclick="check">
+                <div class="my-5">
+                    <p class="lead font-weight-normal">1. How old are you?</p>
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q1" value="A" class="custom-control-input" id="o11">
+                            <label class="custom-control-label form-check-label" for="o11">Under
+                                18</label>
+                        </div>
+
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q1" value="B" class="custom-control-input" id="o12">
+                            <label class="custom-control-label form-check-label" for="o12">Between 18
+                                to 65</label>
+                        </div>
+
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q1" value="C" class="custom-control-input" id="o13">
+                            <label class="custom-control-label form-check-label" for="o13">Above
+                                65</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="my-5 c1">
+                    <p class="lead font-weight-normal">2. Are you experiencing any of these symptoms?</p>
+                    <p class="text-white-55">Select all that apply</p>
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="A" class="custom-control-input" id="o21">
+                            <label class="custom-control-label form-check-label" for="o21">Fever,
+                                chills, or sweating</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="B" class="custom-control-input" id="o22">
+                            <label class="custom-control-label form-check-label" for="o22">Diffculty
+                                breathing (not severe)</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="C" class="custom-control-input" id="o23">
+                            <label class="custom-control-label form-check-label" for="o23">New or
+                                worsening cough</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="D" class="custom-control-input" id="o24">
+                            <label class="custom-control-label form-check-label" for="o24">Sore
+                                throat</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="E" class="custom-control-input" id="o25">
+                            <label class="custom-control-label form-check-label" for="o25">Aching
+                                throughout the body</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="F" class="custom-control-input" id="o26">
+                            <label class="custom-control-label form-check-label" for="o26">Vomiting or
+                                diarrhea</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q2" value="G" class="custom-control-input" id="o27">
+                            <label class="custom-control-label form-check-label" for="o27">None of the
+                                above</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="my-5">
+                    <p class="lead font-weight-normal">3. Do you have any of these conditions?</p>
+                    <p class="text-white-55">Select all that apply</p>
+
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="A" class="custom-control-input" id="o31">
+                            <label class="custom-control-label form-check-label" for="o31">Asthma or
+                                chronic lung disease</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="B" class="custom-control-input" id="o32">
+                            <label class="custom-control-label form-check-label" for="o32">Pregnancy</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="C" class="custom-control-input" id="o33">
+                            <label class="custom-control-label form-check-label" for="o33">Diabetes
+                                with complications</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="D" class="custom-control-input" id="o34">
+                            <label class="custom-control-label form-check-label" for="o34">Disease or
+                                conditions that make it harder to cough</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="E" class="custom-control-input" id="o35">
+                            <label class="custom-control-label form-check-label" for="o35">Kidney
+                                failure that needs dialysis</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="F" class="custom-control-input" id="o36">
+                            <label class="custom-control-label form-check-label" for="o36">Cirrhosis of
+                                the liver</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="G" class="custom-control-input" id="o37">
+                            <label class="custom-control-label form-check-label" for="o37">Weakness
+                                immune system</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="H" class="custom-control-input" id="o38">
+                            <label class="custom-control-label form-check-label" for="o38">Congestive
+                                heart faliure</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="I" class="custom-control-input" id="o39">
+                            <label class="custom-control-label form-check-label" for="o39">Extreme
+                                obesity</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q3" value="J" class="custom-control-input" id="o310">
+                            <label class="custom-control-label form-check-label" for="o310">None of the
+                                above</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="my-5">
+                    <p class="lead font-weight-normal">4. In the last 14 days, have you traveled internationally?</p>
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q4" value="A" class="custom-control-input" id="o41">
+                            <label class="custom-control-label form-check-label" for="o41">I have
+                                traveled internationally</label>
+                        </div>
+
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q4" value="B" class="custom-control-input" id="o42">
+                            <label class="custom-control-label form-check-label" for="o42">I have not
+                                traveled internationally</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="my-5">
+                    <p class="lead font-weight-normal">5. In the last 14 days, have you been in an area where COVID-19
+                        is widespread?</p>
+                    <p class="text-white-55">Select all that apply</p>
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q5" value="A" class="custom-control-input" id="o51">
+                            <label class="custom-control-label form-check-label" for="o51">I live in an
+                                area where COVID-19 is widespread</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q5" value="B" class="custom-control-input" id="o52">
+                            <label class="custom-control-label form-check-label" for="o52">I have
+                                visited an area where COVID-19 is widespread?</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q5" value="C" class="custom-control-input" id="o53">
+                            <label class="custom-control-label form-check-label" for="o53">I don't
+                                know</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q5" value="D" class="custom-control-input" id="o54">
+                            <label class="custom-control-label form-check-label" for="o54">None of the
+                                above</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="my-5">
+                    <p class="lead font-weight-normal">6. In the last 14 days, what is your exposure to other who are
+                        known to have COVID-19?</p>
+                    <p class="text-white-55">Select all that apply</p>
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q6" value="A" class="custom-control-input" id="o61">
+                            <label class="custom-control-label form-check-label" for="o61">I live with
+                                someone who has COVID-19</label>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q6" value="B" class="custom-control-input" id="o62">
+                            <label class="custom-control-label form-check-label" for="o62">I've had
+                                close contact with someone who has COVID-19</label>
+                            <p class="card-text">(For 10 minutes, I was within 6 feet of someone who's sick or exposed
+                                to
+                                a cough or sneeze.)</p>
+                        </div>
+
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q6" value="C" class="custom-control-input" id="o63">
+                            <label class="custom-control-label form-check-label" for="o63">I've been
+                                near someone who has COVID-19</label>
+                            <p class="card-text">(I was at least 6 feet away and was not exposed to sneeze or cough.)
+                            </p>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="q6" value="D" class="custom-control-input" id="o64">
+                            <label class="custom-control-label form-check-label" for="o64">I've had no
+                                exposure</label>
+                            <p class="card-text">(I have not been in contact with someone who's sick.)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="my-5">
+                    <p class="lead font-weight-normal">7. Do you live or work in a care facility?</p>
+                    <p class="text-white-55">This includes a hospital, emergency room, other medical setting or
+                        long-term facility.</p>
+
+                    <div class="form-check my-2 text-white-50">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q7" value="A" class="custom-control-input" id="o71">
+                            <label class="custom-control-label form-check-label" for="o71">I live in a
+                                long-term care facility</label>
+                            <p class="card-text">(This includes nursing homes or assisted living.)</p>
+                        </div>
+
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q7" value="B" class="custom-control-input" id="o72">
+                            <label class="custom-control-label form-check-label" for="o72">I have
+                                worked in a hospital or other care facility in past 14 days</label>
+                            <p class="card-text">(This includes volunteering.)</p>
+                        </div>
+
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q7" value="C" class="custom-control-input" id="o73">
+                            <label class="custom-control-label form-check-label" for="o73">I plan to
+                                work in a hospital or other care facility in the next 14 days</label>
+                            <p class="card-text">(This includes volunteering.)</p>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="q7" value="D" class="custom-control-input" id="o74">
+                            <label class="custom-control-label form-check-label" for="o74">No, I don't
+                                live or work in a care facility</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" class="btn btn-light">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright bg-white text-center py-3">© 2020 Copyright -
+        <a class="text-danger">finny.nj@gmail.com</a>
+    </div>
+    <!-- Copyright -->
+
+    </footer>
+
+
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>

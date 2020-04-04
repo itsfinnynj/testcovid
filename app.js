@@ -96,9 +96,9 @@ form.addEventListener('submit', e => {
 
     //Question 4
     if (form.q4[0].checked == true) {
-        score += 0;
-    } else if (form.q4[1].checked == true) {
         score += 14;
+    } else if (form.q4[1].checked == true) {
+        score += 0;
     }
 
     //Question 5
